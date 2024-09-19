@@ -4,9 +4,8 @@
         "description": "A web service similar to httpbin.org built with Fiber.",
         "title": "Fiber HTTPBin API",
         "contact": {},
-        "version": "1.0"
+        "version": "1.1"
     },
-    "host": "localhost:3000",
     "basePath": "/",
     "paths": {
         "/anything": {

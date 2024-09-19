@@ -45,12 +45,11 @@ definitions:
       size:
         type: integer
     type: object
-host: localhost:3000
 info:
   contact: {}
   description: A web service similar to httpbin.org built with Fiber.
   title: Fiber HTTPBin API
-  version: "1.0"
+  version: "1.1"
 paths:
   /anything:
     delete:

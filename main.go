@@ -17,9 +17,8 @@ import (
 )
 
 // @title Fiber HTTPBin API
-// @version 1.0
+// @version 1.1
 // @description A web service similar to httpbin.org built with Fiber.
-// @host localhost:3000
 // @BasePath /
 func main() {
 	app := fiber.New(fiber.Config{
