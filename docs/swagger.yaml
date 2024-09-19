@@ -1,0 +1,273 @@
+basePath: /
+definitions:
+  models.AnythingResponse:
+    properties:
+      args:
+        additionalProperties:
+          type: string
+        type: object
+      data:
+        type: string
+      files:
+        additionalProperties:
+          items:
+            $ref: '#/definitions/models.FileInfo'
+          type: array
+        type: object
+      form:
+        additionalProperties:
+          items:
+            type: string
+          type: array
+        type: object
+      headers:
+        additionalProperties:
+          items:
+            type: string
+          type: array
+        type: object
+      json: {}
+      method:
+        type: string
+      url:
+        type: string
+    type: object
+  models.FileInfo:
+    properties:
+      filename:
+        type: string
+      header:
+        additionalProperties:
+          items:
+            type: string
+          type: array
+        type: object
+      size:
+        type: integer
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: A web service similar to httpbin.org built with Fiber.
+  title: Fiber HTTPBin API
+  version: "1.0"
+paths:
+  /anything:
+    delete:
+      consumes:
+      - application/json
+      description: Returns all details about the request
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnythingResponse'
+      summary: Echoes the request data
+      tags:
+      - Anything
+    get:
+      consumes:
+      - application/json
+      description: Returns all details about the request
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnythingResponse'
+      summary: Echoes the request data
+      tags:
+      - Anything
+    head:
+      consumes:
+      - application/json
+      description: Returns all details about the request
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnythingResponse'
+      summary: Echoes the request data
+      tags:
+      - Anything
+    options:
+      consumes:
+      - application/json
+      description: Returns all details about the request
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnythingResponse'
+      summary: Echoes the request data
+      tags:
+      - Anything
+    patch:
+      consumes:
+      - application/json
+      description: Returns all details about the request
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnythingResponse'
+      summary: Echoes the request data
+      tags:
+      - Anything
+    post:
+      consumes:
+      - application/json
+      description: Returns all details about the request
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnythingResponse'
+      summary: Echoes the request data
+      tags:
+      - Anything
+    put:
+      consumes:
+      - application/json
+      description: Returns all details about the request
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnythingResponse'
+      summary: Echoes the request data
+      tags:
+      - Anything
+  /delay:
+    get:
+      consumes:
+      - application/json
+      description: Delays the response by a specified number of seconds
+      parameters:
+      - description: Delay in seconds
+        in: query
+        name: seconds
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Delays the response
+      tags:
+      - Delay
+  /get:
+    get:
+      consumes:
+      - application/json
+      description: Echoes the GET request data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Returns the GET data
+      tags:
+      - GET
+  /headers:
+    get:
+      consumes:
+      - application/json
+      description: Echoes the request headers
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Returns the request headers
+      tags:
+      - Headers
+  /ip:
+    get:
+      consumes:
+      - application/json
+      description: Returns the IP address of the requester
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Returns the origin IP
+      tags:
+      - IP
+  /post:
+    post:
+      consumes:
+      - application/json
+      description: Echoes the POST request data
+      parameters:
+      - description: POST Data
+        in: body
+        name: data
+        required: true
+        schema:
+          additionalProperties: true
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Returns the POST data
+      tags:
+      - POST
+  /status:
+    get:
+      consumes:
+      - application/json
+      description: Returns a response with the given HTTP status code
+      parameters:
+      - description: HTTP Status Code
+        in: query
+        name: code
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Returns specified HTTP status
+      tags:
+      - Status
+swagger: "2.0"
